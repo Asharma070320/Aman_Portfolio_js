@@ -90,20 +90,3 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
-document.addEventListener('DOMContentLoaded', function() {
-    emailjs.init("-W0zj-A41DWptettN"); // Initialize EmailJS with your User ID (Public Key)
-
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        emailjs.sendForm('service_q41uk45', 'template_dmrlu7v', this)
-            .then(function() {
-                console.log('SUCCESS!');
-                alert('Your message has been sent successfully!');
-            }, function(error) {
-                console.log('FAILED...', error);
-                alert('Failed to send your message. Please try again later.');
-            });
-    });
-});
