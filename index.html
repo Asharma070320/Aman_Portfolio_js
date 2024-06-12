@@ -78,7 +78,7 @@
                     
                     <div>
                         <h2 class="about__subtitle">I'am Aman</h2>
-                        <p class="about__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate cum expedita quo culpa tempora, assumenda, quis fugiat ut voluptates soluta, aut earum nemo recusandae cumque perferendis! Recusandae alias accusamus atque.</p>           
+                        <p class="about__text">I'm a full stack developer, I possess a comprehensive skill set encompassing both front-end and back-end technologies. My proficiency spans HTML, CSS, JavaScript for client-side development, coupled with frameworks like React.js for robust user interfaces. On the server side, I am adept in Node.js and Express, ensuring efficient server logic and API development. My expertise extends to database management using SQL and NoSQL solutions like MongoDB. I am passionate about creating seamless, responsive web applications that prioritize user experience and functionality. Continuously learning and adapting to new technologies, I thrive in dynamic environments where innovation and problem-solving drive success.</p>           
                     </div>                                   
                 </div>
             </section>
@@ -90,7 +90,7 @@
                 <div class="skills__container bd-grid">          
                     <div>
                         <h2 class="skills__subtitle">Profesional Skills</h2>
-                        <p class="skills__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit optio id vero amet, alias architecto consectetur error eum eaque sit.</p>
+                        <p class="skills__text"> I excel in HTML, CSS, and JavaScript, leveraging them to craft intuitive and visually appealing front-end experiences. Additionally, I specialize in React.js, proficiently building interactive and scalable web applications that meet modern standards of performance and usability.</p>
                         <div class="skills__data">
                             <div class="skills__names">
                                 <i class='bx bxl-html5 skills__icon'></i>
@@ -178,27 +178,28 @@
             <!--===== CONTACT =====-->
             <section class="contact section" id="contact">
                 <h2 class="section-title">Contact</h2>
-
+            
                 <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="Submit" class="contact__button button">
+                    <form id="contact-form" class="contact__form">
+                        <input type="text" name="from_name" placeholder="Name" class="contact__input" required>
+                        <input type="email" name="from_email" placeholder="Email" class="contact__input" required>
+                        <textarea name="message" placeholder="Message" cols="0" rows="10" class="contact__input" required></textarea>
+                        <input type="submit" value="Submit" class="contact__button button">
                     </form>
                 </div>
             </section>
+
         </main>
 
         <!--===== FOOTER =====-->
         <footer class="footer">
             <!-- <p class="footer__title">Aman</p> -->
             <div class="footer__social">
-                <a href="#" class="footer__icon"><i class='bx bxl-linkedin'></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-github' ></i></a>
+                <a target="_blank" href="https://www.linkedin.com/in/aman-sharma-2a1728269/" class="footer__icon"><i class='bx bxl-linkedin'></i></a>
+                <a  target="_blank" href="https://www.instagram.com/amansharma_0703/" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                <a target="_blank" href="https://github.com/Asharma070320" class="footer__icon"><i class='bx bxl-github' ></i></a>
                 <!-- <a href="#" class="footer__icon"><i class="ri-mail-line"></i></a> -->
-                <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+                <a target="_blank" href="https://x.com/AmanSha48914636" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
             </div>
             <!-- <p class="footer__copy">&#169; Bedimcode. All rigths reserved</p> -->
         </footer>
@@ -206,6 +207,27 @@
 
         <!--===== SCROLL REVEAL =====-->
         <script src="https://unpkg.com/scrollreveal"></script>
+
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        emailjs.init("-W0zj-A41DWptettN"); // Replace with your actual User ID
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Send the form data using EmailJS
+            emailjs.sendForm('service_q41uk45', 'template_cjtxlv9', this)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Your message has been sent successfully!');
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('Failed to send your message. Please try again later.');
+                });
+        });
+    });
+  </script>
 
         <!--===== MAIN JS =====-->
         <script src="./main.js"></script>
