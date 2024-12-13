@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     resumeButton.addEventListener('click', function() {
         // Assuming your resume file is named 'resume.pdf'
-        const resumeUrl = './Aman.pdf';
+        const resumeUrl = './Amans.pdf';
         
         // Create an anchor element
         const downloadLink = document.createElement('a');
